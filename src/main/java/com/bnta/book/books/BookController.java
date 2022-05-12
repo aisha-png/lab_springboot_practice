@@ -46,7 +46,7 @@ public class BookController {
         return this.bookService.getBooks();
     }
 
-//    petService is being passed as a dependency since we will use its methods
+//    bookService is being passed as a dependency since we will use its methods
     @GetMapping(value = "/{id}")
     public BookModel getBook(@PathVariable("id") int id){
         return this.bookService.getBook(id);
