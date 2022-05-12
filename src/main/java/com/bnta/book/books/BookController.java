@@ -3,6 +3,7 @@ package com.bnta.book.books;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.Local;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,8 @@ import java.util.List;
 public class BookController {
 
     private BookService bookService;
+
+    public BookController(){}
 
 //    Automate a DI for the constructor
     @Autowired
@@ -39,8 +42,14 @@ public class BookController {
 
 
     @GetMapping
-    public List<String> getBooks(){
-        return Arrays.asList("The Shining", "Battle Royale", "Out", "In the Miso Soup", "Jane Eyre", "");
+    public List<BookModel> getBooks(){
+        return this.bookService.getBooks();
+    }
+
+//    petService is being passed as a dependency since we will use its methods
+    @GetMapping(value = "/{id}")
+    public BookModel getBook(@PathVariable("id") int id){
+        return this.bookService.getBook(id);
     }
 
 
