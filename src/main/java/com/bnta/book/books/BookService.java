@@ -27,5 +27,28 @@ public class BookService {
         this.nextId++;
     }
 
+//    Find book by id and return
+    public BookModel getBook(int id){
+        for (BookModel book : books){
+            if (book.getId() == id){
+                return book;
+            }
+        }
+        return null;
+    }
+
+//    return list of all books
+    public List<BookModel> getBooks(){
+        return books;
+    }
+
+    public void removeBooks(int id){
+        for (BookModel book : books){
+            if (book.getId() == id){
+                books.remove(book);
+            }
+        }
+    }
+
 
 }

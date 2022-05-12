@@ -92,4 +92,6 @@ public class BookModel {
     public BookModel createNew(int id, String bookName, String author, LocalDate releaseDate, Set<String> genres, float price){
         return new BookModel(id, bookName, author, releaseDate, genres, price);
     }
+
+
 }
