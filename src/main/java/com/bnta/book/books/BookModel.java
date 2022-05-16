@@ -87,6 +87,21 @@ public class BookModel {
         this.price = price;
     }
 
+    //NEW: adding a toString:
+
+    @Override
+    public String toString() {
+        return "BookModel{" +
+                "id=" + id +
+                ", bookName='" + bookName + '\'' +
+                ", author='" + author + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", genres=" + genres +
+                ", price=" + price +
+                '}';
+    }
+
+
     //A factory method
 
     public BookModel createNew(int id, String bookName, String author, LocalDate releaseDate, Set<String> genres, float price){

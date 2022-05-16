@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("books")
 public class BookController {
+    //controller uses the service
 
     private BookService bookService;
 
